@@ -1,5 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let combinations = [];
+  
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      combinations.push(array[i] + array[j]);
+    }
+  }
+  //console.log(combinations);
+if (combinations.includes(target)) {
+  return true;
+} else {
+  return false;
+}
 }
 
 /* 
@@ -11,7 +23,9 @@ function hasTargetSum(array, target) {
 */
 
 /*
-  Add written explanation of your solution here
+  the function creates a new empty array then
+ for loop to iterate each element find and push any possible 
+ sum combination to new array then if else statement to compare
 */
 
 // You can run `node index.js` to view these console logs
